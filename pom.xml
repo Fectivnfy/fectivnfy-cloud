@@ -12,32 +12,53 @@
 
     <groupId>com.fectivnfy</groupId>
     <artifactId>fectivnfy-cloud</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>cloud</name>
     <packaging>pom</packaging>
     <description>Fectivnfy Cloud project for Spring Boot</description>
+
+    <modules>
+        <module>fectivnfy-core</module>
+        <module>fectivnfy-common</module>
+    </modules>
+
     <properties>
-        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <revision>0.0.1-SNAPSHOT</revision>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <!--     spring-boot       -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.yaml</groupId>
+                    <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- 统一定义子模块依赖的版本号   -->
+    <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.yaml</groupId>
-                        <artifactId>snakeyaml</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <scope>test</scope>
+                <groupId>com.fectivnfy</groupId>
+                <artifactId>fectivnfy-common</artifactId>
+                <version>${revision}</version>
             </dependency>
         </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

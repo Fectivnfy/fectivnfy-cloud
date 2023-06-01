@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.fectivnfy</groupId>
         <artifactId>fectivnfy-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
     </parent>
 
-    <artifactId>fectivnfy-common</artifactId>
+    <artifactId>fectivnfy-core</artifactId>
     <version>${revision}</version>
-    <name>common</name>
-    <description>Fectivnfy Common project for Spring Boot</description>
+    <name>core</name>
+    <description>Fectivnfy Core project for Spring Boot</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -21,10 +21,11 @@
     </properties>
 
     <dependencies>
-        <!--    spring-web  -->
+
+        <!--    公共配置类    -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.fectivnfy</groupId>
+            <artifactId>fectivnfy-common</artifactId>
         </dependency>
     </dependencies>
 

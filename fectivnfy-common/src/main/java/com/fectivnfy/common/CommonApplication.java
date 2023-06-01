@@ -1,12 +1,12 @@
 package com.fectivnfy.common;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+@ComponentScan("com.fectivnfy.common")
 public class CommonApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CommonApplication.class, args);
+        System.out.println("Fectivnfy Common");
     }
+
 }

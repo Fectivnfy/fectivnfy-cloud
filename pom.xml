@@ -23,10 +23,19 @@
     </modules>
 
     <properties>
+        <!--   编译版本     -->
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <!--    字符集设置    -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--    Fectivnfy版本    -->
         <revision>0.0.1-SNAPSHOT</revision>
+
+        <!--   各依赖版本     -->
+        <snakeyaml.version>2.0</snakeyaml.version>
+        <nacos.config.spring.boot.starter.version>0.2.12</nacos.config.spring.boot.starter.version>
+        <nacos.client.version>2.2.3</nacos.client.version>
+        <nacos.discovery.spring.boot.starter.version>0.2.12</nacos.discovery.spring.boot.starter.version>
     </properties>
 
     <dependencies>
@@ -34,19 +43,39 @@
             <!--     spring-boot       -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.yaml</groupId>
-                    <artifactId>snakeyaml</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
+        <!--    spring-boot-test    -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${snakeyaml.version}</version>
+        </dependency>
+
+        <!--   nacos相关     -->
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <version>${nacos.config.spring.boot.starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>${nacos.client.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+            <version>${nacos.discovery.spring.boot.starter.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <!-- 统一定义子模块依赖的版本号   -->
